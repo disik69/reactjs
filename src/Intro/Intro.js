@@ -1,7 +1,7 @@
 /**
  * Created by disik on 12/5/17.
  */
-import React, {Component} from 'react';
+import React, {Component} from "react";
 import "./Intro.css";
 
 export default class Intro extends Component {
@@ -10,7 +10,7 @@ export default class Intro extends Component {
         lastName: "Demchenko"
     };
 
-    parentElement = React.createElement("p", {className: "article"}, "Article");
+    parentElement = React.createElement("div", {}, this.getIntro(), React.createElement("p", {className: "article"}, "Article"));
 
     getIntro() {
         return (
@@ -22,13 +22,7 @@ export default class Intro extends Component {
     }
 
     render() {
-        return (
-                <div>
-                    {this.getIntro()}
-                    {this.parentElement}
-                </div>
-
-        );
+        return this.parentElement;
     }
 }
 
