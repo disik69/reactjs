@@ -2,6 +2,7 @@
  * Created by disik on 12/6/17.
  */
 import React, {Component} from "react";
+import Indicator from "./Indicator";
 import "./Clock.css";
 
 export default class Clock extends Component {
@@ -41,7 +42,7 @@ export default class Clock extends Component {
 
     render() {
         return (
-            <h2>It is {this.state.date.toLocaleTimeString()}. Counter is {this.state.counter}</h2>
+            <h2>It is {this.state.date.toLocaleTimeString()}. Counter is <Indicator increment={this.props.increment} counter={this.state.counter}></Indicator></h2>
         );
     }
 }
